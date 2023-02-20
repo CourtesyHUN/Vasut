@@ -2,11 +2,11 @@ const allomasok = ["Budapest-Nyugati", "Zugló", "Kőbánya alsó", "Kőbánya-K
 //#region ElötteUtána
 function ElotteUtana(megallo) 
 {
-    var p = allomasok.indexOf(megallo);
+    var p = allomasok.findIndex( item => megallo.toLowerCase()=== item.toLowerCase());
     var r = "";
     if (p == -1) 
     {
-        r= "Nincs ilyen megálló ezen a vonalon"   
+        r = "Nincs ilyen megálló ezen a vonalon"   
     }
     else
     {
@@ -22,11 +22,11 @@ function ElotteUtana(megallo)
     }
     if (p == allomasok.length-1) 
     {
-        r += "Elötte: ---"  
+        r += "Utána: ---"  
     }
     else
     {
-        r += "Elötte: "+allomasok[p+1]  
+        r += "Utána: "+allomasok[p+1]  
     }
     return r;
 }
@@ -35,7 +35,7 @@ function ElotteUtana(megallo)
 //#region Keres
 function Keres() 
 {
-    var anev = document.getElementById("allomasnev"); /* Állomás név */
+    var anev = document.getElementById("allomasnev").value.toLowerCase(); /* Állomás név */
     document.getElementById("eredmeny").innerHTML = ElotteUtana(anev)
 }
 //#endregion
