@@ -28,6 +28,9 @@ function ElotteUtana(megallo)
     {
         r += "Utána: "+allomasok[p+1]  
     }
+    var x = (p/allomasok.length)*100
+    move(x)
+    console.log(x)
     return r;
 }
 //#endregion
@@ -37,5 +40,34 @@ function Keres()
 {
     var anev = document.getElementById("allomasnev").value.toLowerCase(); /* Állomás név */
     document.getElementById("eredmeny").innerHTML = ElotteUtana(anev)
+}
+//#endregion
+
+//#region Porgress bar 
+var i = 0;
+function move(x) 
+{
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var id = setInterval(frame, 10);
+    elem.style.width = width + "%";
+    elem.innerHTML = width + "%";
+    function frame() 
+    {
+      if (width >= x) 
+      {
+        clearInterval(id);
+        i = 0;
+      } 
+      else 
+      {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width + "%";
+      }
+    }
+  }
 }
 //#endregion
