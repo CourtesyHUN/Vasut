@@ -19,7 +19,7 @@ function ElotteUtana(megallo)
             r += "Elötte: ---"  
         }
         r += "<br>"
-    }
+    
     if (p == allomasok.length-1) 
     {
         r += "Utána: ---"  
@@ -28,9 +28,19 @@ function ElotteUtana(megallo)
     {
         r += "Utána: "+allomasok[p+1]  
     }
+    }
     var x = (p/allomasok.length)*100
-    move(x)
-    console.log(x)
+    if (allomasok[p] == undefined) 
+    {
+        var y = ""
+    }
+    else
+    {
+        y =allomasok[p]
+    }
+    
+    move(x,y)
+    console.log(y)
     return r;
 }
 //#endregion
@@ -45,7 +55,7 @@ function Keres()
 
 //#region Porgress bar 
 var i = 0;
-function move(x) 
+function move(x,y) 
 {
   if (i == 0) {
     i = 1;
@@ -53,7 +63,7 @@ function move(x)
     var width = 0;
     var id = setInterval(frame, 10);
     elem.style.width = width + "%";
-    elem.innerHTML = width + "%";
+    elem.innerHTML = y;
     function frame() 
     {
       if (width >= x) 
@@ -65,7 +75,7 @@ function move(x)
       {
         width++;
         elem.style.width = width + "%";
-        elem.innerHTML = width + "%";
+        elem.innerHTML = y;
       }
     }
   }
