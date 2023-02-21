@@ -1,12 +1,14 @@
 #myProgress {
-    width: 100%;
+    width: 80%;
     background-color: grey;
     margin: 0 auto;
+    display: none;
   }
   
   #myBar {
-    width: 0%;
+    width: 10%;
     height: 50px;
     background-color: rgb(118, 184, 118);
     text-align: center;
+    transition: 2.5s;
   }

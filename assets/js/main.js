@@ -50,6 +50,7 @@ function Keres()
 {
     var anev = document.getElementById("allomasnev").value.toLowerCase(); /* Állomás név */
     document.getElementById("eredmeny").innerHTML = ElotteUtana(anev)
+    document.getElementById("myProgress").style.display= "block";
 }
 //#endregion
 
