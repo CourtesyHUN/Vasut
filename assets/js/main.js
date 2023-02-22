@@ -1,4 +1,9 @@
 const allomasok = ["Budapest-Nyugati", "Zugló", "Kőbánya alsó", "Kőbánya-Kispest", "Pestszentlőrinc", "Szemeretelep","Ferihegy","Vecsés","Vecsés-Kertekalja", "Üllő", "Hosszúberek-Péteri", "Monor", "Monorierdő", "Pilis", "Albertirsa", "Ceglédbercel", "Ceglédbercel-Cserő", "Budai út", "Cegléd", "Abony", "Szolnok", "Szajol", "Törökszentmiklós", "Fegyvernek-Örményes", "Kisújszállás"]
+for (let i = 0; i < allomasok.length; i++) 
+{
+  document.getElementById("datalista").innerHTML += '<option value='+allomasok[i]+'>'
+}
+
 //#region ElötteUtána
 function ElotteUtana(megallo) 
 {
@@ -29,7 +34,7 @@ function ElotteUtana(megallo)
         r += "Utána: "+allomasok[p+1]  
     }
     }
-    var x = (p/allomasok.length)*100
+    var x = (p/(allomasok.length-1))*100
     if (allomasok[p] == undefined) 
     {
         var y = ""
@@ -76,7 +81,7 @@ function move(x,y)
       {
         width++;
         elem.style.width = width + "%";
-        elem.innerHTML = y;
+        elem.innerHTML = '<img id="vonatkep" src="assets/images/Vonat.png" alt="">';
       }
     }
   }
