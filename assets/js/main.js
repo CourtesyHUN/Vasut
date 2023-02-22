@@ -1,8 +1,10 @@
+//#region Lista és opinion generálás
 const allomasok = ["Budapest-Nyugati", "Zugló", "Kőbánya alsó", "Kőbánya-Kispest", "Pestszentlőrinc", "Szemeretelep","Ferihegy","Vecsés","Vecsés-Kertekalja", "Üllő", "Hosszúberek-Péteri", "Monor", "Monorierdő", "Pilis", "Albertirsa", "Ceglédbercel", "Ceglédbercel-Cserő", "Budai út", "Cegléd", "Abony", "Szolnok", "Szajol", "Törökszentmiklós", "Fegyvernek-Örményes", "Kisújszállás"]
 for (let i = 0; i < allomasok.length; i++) 
 {
   document.getElementById("datalista").innerHTML += '<option value='+allomasok[i]+'>'
 }
+//#endregion
 
 //#region ElötteUtána
 function ElotteUtana(megallo) 

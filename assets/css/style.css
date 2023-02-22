@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body
+{
+  font-family: 'Source Code Pro', monospace;
+}
+
 #myProgress {
-    width: 80%;
+    width: 75%;
     border-bottom: 2px dashed brown;
     margin: 0 auto;
     display: none;
-
   }
   
   #myBar {
@@ -18,4 +24,9 @@
 {
   width: 50px;
   margin-top: 15px;
+}
+
+span
+{
+  border: 1px solid;
 }
